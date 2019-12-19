@@ -19,7 +19,9 @@ app.get('/allProducts', function (req, res, next) {
     'SKU_ATTRIBUTE_VALUE1,SKU_ATTRIBUTE_VALUE2,SKU_ATTRIBUTE_VALUE3,SKU_ATTRIBUTE_VALUE4,SKU_ATTRIBUTE_VALUE5,SKU_ATTRIBUTE_VALUE6,'+
     'BRAND,LIST_PRICE,DISCOUNT,IN_STOCK,PRICE_EFFECTIVE_DATE from sampledb.XXIBM_PRODUCT_SKU s inner join sampledb.XXIBM_PRODUCT_STYLE m on s.ITEM_NUMBER = m.ITEM_NUMBER'+
     ' inner join sampledb.XXIBM_PRODUCT_PRICING d on d.ITEM_NUMBER = m.ITEM_NUMBER;', function (err, rows, fields) {
+        console.log(rows)
         res.send(rows);
+
     });
 });
 
