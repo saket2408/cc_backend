@@ -13,16 +13,14 @@ const conn = mysql.createConnection({
 
 /* for debugging purposes */
 app.get('/allProducts', function (req, res, next) {
-    var ordersList;
     conn.connect();
     conn.query('select * from sampledb.XXIBM_PRODUCT_SKU', function (err, rows, fields) {
         if (err) throw err
         else{
             console.log(rows[0].rowDataPacket)
-            orderlist=rows[0];
         }
-        console.log(ordersList);
-        res.send({ success: true, result: rows[0].rowDataPacket });
+        console.log(rows[0]);
+        res.send({ success: true, result: rows[0] });
     });
 });
 
