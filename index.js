@@ -15,9 +15,10 @@ const conn = mysql.createConnection({
 app.get('/allProducts', function (req, res, next) {
     var ordersList;
     conn.connect();
-    conn.query('select * from XXIBM_PRODUCT_SKU', function (err, rows, fields) {
+    conn.query('select * from sampledb.XXIBM_PRODUCT_SKU', function (err, rows, fields) {
         if (err) throw err
         else{
+            console.log(rows)
             orderlist=rows;
         }
         console.log(ordersList);
