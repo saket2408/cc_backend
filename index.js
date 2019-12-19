@@ -18,12 +18,11 @@ app.get('/allProducts', function (req, res, next) {
     conn.query('select * from sampledb.XXIBM_PRODUCT_SKU', function (err, rows, fields) {
         if (err) throw err
         else{
-            console.log(rows[0])
-            console.log(fields)
-            orderlist=rows;
+            console.log(rows[0].rowDataPacket)
+            orderlist=rows[0];
         }
         console.log(ordersList);
-        res.send({ success: true, result: ordersList });
+        res.send({ success: true, result: rows[0].rowDataPacket });
     });
 });
 
