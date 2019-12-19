@@ -18,7 +18,8 @@ app.get('/allProducts', function (req, res, next) {
     conn.query('select * from sampledb.XXIBM_PRODUCT_SKU', function (err, rows, fields) {
         if (err) throw err
         else{
-            console.log(JSON.parse(rows))
+            console.log(rows[0])
+            console.log(fields)
             orderlist=rows;
         }
         console.log(ordersList);
