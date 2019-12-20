@@ -11,7 +11,6 @@ const conn = mysql.createConnection({
 })
 
 
-/* for debugging purposes */
 app.get('/allProducts', function (req, res, next) {
     conn.connect();
     conn.query('select s.ITEM_NUMBER , s.DESCRIPTION, s.LONG_DESCRIPTION , s.CATALOGUE_CATEGORY, s.SKU_UNIT_OF_MEASURE, s.STYLE_ITEM,'+
@@ -33,4 +32,4 @@ app.get('/allProducts', function (req, res, next) {
 
 
     app.listen(port, host);
-    console.log('Backend server started on: ' + host + ':' + port);
+    console.log('server started on: ' + host + ':' + port);
